@@ -1,0 +1,8 @@
+void printInfo() {
+  print("这是一个自定义方法");
+}
+
+void main() {
+  print('调用内置方法');
+  printInfo();
+}

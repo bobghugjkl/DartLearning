@@ -1,0 +1,106 @@
+class Person{
+    String name="...";
+    int age =23;
+//构造函数，实例化的时候自动触发
+    Person(){
+        print("....");
+    }
+    Person(this.name,this.age)//简写默认构造规则，只能有一个,默认实例化类的时候调用的是默认构造函数
+    //命名构造函数可以有多个
+    Person.now(){
+        print("...")
+    }
+    Person.setInfo(String name,int age){
+        this.name="...";
+        this.age=age;
+        print("...")
+    }
+    void getInfo(){
+        print("$name----$age");
+        print("${this.name}")  
+    }
+}
+
+void main(){
+    var p1 = new Person();
+    Person p2 = new Person.now();
+    print(p1.name);
+}
+
+
+私有方法是在前面加个下划线（名字前），并且类要单独抽离出去成一个文件，然后在主函数下import出来
+当然也可以在类中定义公有方法让它返回对应的this.变量名来对抗这种私有方法
+方法也可以私有，同样是前面加下划线，同样可以用this来填充一个公有方法来间接访问私有方法
+Class Animal{
+    String _name;
+    int age;
+    Animal(this._name,this,age);
+    void f(){
+        print("...");
+    }
+    String getName(){
+        return this._name;
+    }
+    void _run(){
+        print("...");
+
+    }
+    execRun(){
+        this._run();
+    }
+}
+
+
+get和set方法修饰
+可以通过直接访问属性的方式访问，即get
+class rea(){
+    num height;
+    num width;
+    rea(this.height,this.width);
+    get area{
+        return this.height*this.width;
+    }
+}
+void main(){
+    rea r = new rea(10,4);
+    print("面积：${r.area}");
+}
+
+
+
+class rea(){
+    num height;
+    num width;
+    rea(this.height,this.width);
+    area(){
+        return this.height*this.width;
+    }
+    set larea(value){
+        this.height=value;
+    }
+}
+void main(){
+    rea r = new rea(10,4);
+    r.larea=6;
+    r.area();//如果要是set函数的话不需要加括号,即上一行的形式
+    print("面积：${r.area()}");
+}
+
+
+
+初始化列表
+class rea(){
+    num height;
+    num width;
+    //初始化
+    Rec():height=2,width=10{
+        print("...");
+    }
+    rea(this.height,this.width);
+    area(){
+        return this.height*this.width;
+    }
+    set larea(value){
+        this.height=value;
+    }
+}

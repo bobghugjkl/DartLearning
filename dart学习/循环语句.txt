@@ -1,0 +1,36 @@
+1.++和--
+自增:++
+自减:--
+现在后面是先赋值后运算(赋值运算的时候)
+
+2.for循环
+for(int i=0;i<n;i++)
+{
+    ......
+}
+循环复杂数组
+List list=[{
+    "title":"111"
+},
+{
+    "title":"222"
+},
+{
+    "title":"333"
+}
+];
+for(var i = 0;i<list.length;i++)
+{
+    print(list[i]['title']);
+}
+
+
+注意：$+变量也可以输出那个变量
+比如：
+for(int i=1;i<=5;i++)
+{
+    for(int j=1;j<=5;j++)
+    {
+        print("djajdj--$j");
+    }
+}

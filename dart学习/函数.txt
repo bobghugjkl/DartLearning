@@ -1,0 +1,89 @@
+返回类型  方法名称(参数1...){
+    类似于c
+}
+
+返回类型也可以是list集合等
+返回值类型可以不写，方法也可以写在main函数里面，此时是局部作用域，但是在局部作用域的里面可以调用局部方法,在外面就不可以了
+比如：
+int main(){
+    .....
+    void xxx(){
+        aaa(){
+            ...
+        }
+        aaa();
+    }
+}
+
+
+
+可选参数,默认参数,命名参数：
+String a(String s,[int age,String str ="男",{int a}]){
+
+}
+a( "..." , a : 12 , );
+
+
+
+函数也可以作为参数传入
+
+匿名方法（没有名字的方法）
+var fn=(){
+    print("...");
+};
+fn();
+
+
+箭头函数：里面只能有一句话
+List list=["...","...","..."];
+list.forEach((value)=>print(value));//打印
+//要list里面所有大于2的数乘以2
+List list =["2","3","4"];
+var newList=list.map((value)=>value>2?value*2:value);
+print(newList.toList())
+//相互调用
+定义一个方法判断是否是偶数，在定义一个方法打印一到n以内所有的偶数
+bool f(int n){//不知道是什么值，可以不写
+    if(n%2==0){
+        return true;
+    }
+    return false;
+}
+printnum(int n){
+    for(int i=1;i<=n;i++){
+        if(f(i)){
+            print(i);
+        }
+    }
+}
+printnum(10);
+
+
+
+
+匿名方法（没有名字的方法）
+    var v =(){
+        print(123);
+    };
+    v();
+
+
+自执行方法
+((int n){
+    print("我是自执行方法");
+})(12);//括号里面的可以有可以没有
+
+
+
+闭包：
+全局变量：常驻内存，污染区全局
+局部变量：会被垃圾回收机制回收，不会污染全局
+闭包：二者兼有好处
+写法：函数嵌套函数，并return里面的函数，这样就形成了闭包
+fn(){
+    var a=123;
+    return(){
+        a++;
+        print(a);
+    };
+}

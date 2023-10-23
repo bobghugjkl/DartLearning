@@ -1,0 +1,70 @@
+1.算术运算符
+void main(){
+    int a=13;
+    int b=5;
+    print(a+b);
+    print(a-b);
+    print(a*b);
+    print(a/b);
+    print(a%b);
+    print(a~/b);  //取整(向下)
+
+    var c = a*b;
+    print(c);
+}
+2.关系运算符
+< <= > >= != ==
+3.逻辑运算符
+    !取反
+    &&并
+    ||或者
+4.赋值运算符
+    =
+    b??=23 如果b为空把23赋值给b
+    int b=10;
+    b??=23;
+    print(b);
+    +=
+    -=
+    *=
+    /=
+    %=
+    ~/=
+5.条件表达式
+if -else if
+swich - case(break和default别忘了)
+三目运算符：
+    bool flag = true;
+    String c = flag?'我是true':"我是false";
+    print(c);
+??运算符
+    var a;
+    var b=a??10;//a不为空将a赋值给b否则将10赋值给b;
+    print(b);
+
+6.类型转换
+    1.Number类型(int double...)转换成String:toString()
+    2.String-->Number:parse()(一般用double.parse())
+        String str ="123";
+        var myNum=int.parse(str);
+        print(myNum is int);
+    3.如果要转换的是空的话会报错，要用到抛出异常
+    String price =" ";
+    try{
+        var myNum = double.parse(price);
+
+        print(myNum);
+    }catch(err){
+        print(0);
+    }
+
+    4.isEmpty:判断当前字符串是否为空
+    str.isEmpty
+
+    
+    5.0/0会显示nan
+    var myNum = 0/0;
+
+    if(myNum.isNaN){
+        print("NaN");
+    }

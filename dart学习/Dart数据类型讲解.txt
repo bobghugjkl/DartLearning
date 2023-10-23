@@ -1,0 +1,83 @@
+1.常用数据类型
+list（数组）
+    var l1 = ["张三",20,true];
+    获取长度：l1.length
+    获取某一个元素-直接用下标
+    
+    或者也可以直接指定类型
+    var l1 = <String>["张三","李四","123"];
+    var l8 = list<String>.filled(2," ");//与下面的异曲同工
+
+    当然也可以增加数据来定义
+    var l4 =[];
+    用add来增加
+    l4.add("Tom");
+    l4.add(29);
+    可获取长度等
+    当然第一种方法也可以随意增加，是可变的
+
+    创建一个固定长度的集合
+    第一个数字是长度，第二个空格是用什么东西填充,当然也可以通过下标来修改和获取内容，但是没法增加了
+    var l6 = list.filled(2," ");
+    l6.length=0;//报错，无法修改长度,当然其他的可以修改
+
+
+
+
+Maps（字典）
+    第一种定义方式以及打印方式
+    ver person={
+        "name":"张三",
+        "age":20
+    };
+    print(person["name"]);
+    print(person);
+
+
+    第二种定义方式
+    var p= new Map();
+    p["name"]="李四";
+    p["age"]=20;
+    p["work"]=["程序员","送外卖"];
+    print(p);
+    print(p["age"]);
+
+2.字符串类型
+    1.定义字符串类型(单行与多行)
+    var str1 = "this is str";
+    print(str);
+    var str2 = '''this is a car
+            this is a plain
+            ''';
+    print(str2);
+    多行打印的时候打印格式按你写的格式来
+    2.字符串拼接
+    String str1="hello";
+    String str3="world";
+    print("$str1 $str3");
+    或者
+    print(str1+" "+str2);
+
+3.数值类型
+    1.int
+    int a =12;
+    2.double
+    double b =23.4;
+    3.运算符
+    var c = a*b;
+    4.bool
+    bool flag = true;
+    不会对类型作自动转换！
+
+4.条件判断
+和其他语言一致
+
+5.判断数据类型
+is 关键字来判断
+if(str is String){
+    print("str是字符串类型");
+}else if(str is int){
+    print("str是int类型");
+}else{
+    print("是其他类型");
+}

@@ -1,0 +1,186 @@
+var l1 = []; //创建list，里面想放什么就放什么
+  var l2 = <String>['x', 'Z']; //尖括号找范围
+  List l3 = List<String>.filled(2, " ");
+  l3[0] = "苹果";
+  print(l3);
+  print(l2.length);
+  print(l2.isEmpty);
+  print(l2.isNotEmpty);
+  print(l2.reversed);
+  //toList():将其他类型转换成集合类型
+  var newMyList = l2.reversed.toList();
+  print(newMyList);
+  l2.add("taozi");
+  l2.addAll(["lalala", "hahaha"]);
+  //查找数据
+  print(l2.indexOf("hahaha"));
+  //删除数据（值）
+  l2.remove("lalala");
+  //删除数据（下标）
+  l2.removeAt(2);
+  //修改数据
+  l2.fillRange(1, 2, "aaa"); //左闭右开，修改第二个元素
+  //指定位置插入数据
+  l2.insert(1, "bbb"); //在第一个数后面加
+  //增加多个数据
+  l2.insertAll(1, ["aaa", "bbb"]);
+  //join(",")将一个东西转换成一个字符串并用，分割（当然也可以用别的符号）
+  List myList = ['香蕉', '苹果', '西瓜'];
+  var str1 = myList.join(','); //将列表转换成字符串并用逗号隔开\
+  print(str1);
+  //split(',')将字符串变为数组输出，并按逗号（...）分成不同的部分
+  var list5 = str1.split(',');
+  print(list5);
+
+
+
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
+  
+  
+  
+  //set可以去重
+  var s = new Set();
+  s.add('香蕉');
+  s.add('苹果');
+  s.add('苹果');
+  print(s);
+  //转换成数组
+  print(s.toList());
+  //集合去重
+  List myList1 = [
+    'banana',
+    'apple',
+    'waterwall',
+    'banana',
+    'apple',
+    'banana',
+    'apple'
+  ];
+  var s1 = new Set();
+  s.addAll(myList1);
+  print(s1);
+  print(s1.toList());
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //映射是无序的键值对
+  //定义
+  var person = {
+    "name": "张三",
+    "age": 20,
+  };
+  //或者
+  var m = new Map();
+  m["name"] = "李四";
+  print(person);
+  print(m);
+  //常用方法
+  print(person.keys);
+  //转换成list一般打印的时候，因为比较好看
+  print(person.keys.toList());
+  //获取values
+  print(person.values.toList());
+  //判断是否为空
+  print(person.isEmpty);
+  print(person.isNotEmpty);
+  //增加
+  person.addAll({
+    "work": ["敲代码", "送外卖"],
+    "height": 180
+  });
+  print(person);
+  //删掉
+  person.remove("work");
+  //查找value里面有没有张三
+  print(person.containsValue('张三'));
+  //当然也可以找key
+  print(person.containsKey("work"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //循环List
+  List myList = [1, 2, 4, 5, 6, 78, 9, 65];
+  for (var i = 0; i < myList.length; i++) {
+    print(myList[i]);
+  }
+  //或者
+  for (var item in myList) {
+    print(item);
+  }
+  //再或者
+  myList.forEach((value) {
+    print("$value");
+  });
+  //若要修改集合里面的数据,但是这样会返回map，所以要用toList方法
+  var newList = myList.map((value) {
+    return value * 2;
+  });
+  print(newList);
+  print(newList.toList());
+  //把满足条件的整成一个新的集合
+  var newList2 = myList.where((value) {
+    return value > 5;
+  });
+  print(newList2.toList());
+  //有无满足条件的数据
+  var f = myList.any((value) {
+    //集合里面有满足的就返回true
+    return value > 5;
+  });
+  print(f);
+  var v = myList.every((value) {
+    //每一个都满足条件返回true否则false
+    return value > 5;
+  });
+  print(v);
+
+
+
+
+
+
+
+
+  //循环set
+  var s = new Set();
+  s.addAll([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  s.forEach((value) => print(value));
+
+  //map
+  var person = {
+    "name": "张三",
+    "age": 20,
+  };
+  person.forEach((key, value) {
+    print("$key----$value");//以字符串类型获取可能要用到这个$符号
+  });
